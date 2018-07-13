@@ -1,0 +1,37 @@
+ <!-- Table -->
+ <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Table Database</h2>
+          <table class="table myTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Mobile</th>
+                  <th>Email</th>
+                  <th>Address</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="user in users">
+                  <td> <input type="text" ng-model="user.name" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{user.name}}</span></td>
+                  <td><input type="text" ng-model="user.age" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{user.age}}</span></td>
+                  <td><input type="text" ng-model="user.mobile" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{user.mobile}}</span></td>
+                  <td><input type="text" ng-model="user.email" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{user.email}}</span></td>
+                  <td><input type="text" ng-model="user.address" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{user.address}}</span></td>
+                  <td><button type="button" class="btn btn-primary"><span ng-click="editMe($index)" ng-hide="user.editable">Edit</span>
+                     <span ng-click="save($index)" ng-show="user.editable">Save</span></button>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" ng-click="deleteTable($index)">Delete</button></td>
+                
+                  </tr>
+            </table>
+      </div>
+    </div>
+  </div>

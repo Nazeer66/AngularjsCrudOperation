@@ -1,0 +1,36 @@
+{
+	"data": [{
+			"id": 1,
+			"name": "Nazeer",
+			"age": 26,
+			"mobile": 7358444561,
+			"email": "jemsynazeer6@gmail.com",
+			"address": "Royapettah"
+		},
+		{
+			"id": 2,
+			"name": "Dilip",
+			"age": 25,
+			"mobile": 9551819292,
+			"email": "dilip@gmail.com",
+			"address": "VM Street"
+		},
+		{
+			"id": 3,
+			"name": "Arzath",
+			"age": 26,
+			"mobile": 9710128495,
+			"email": "arzath@gmail.com",
+			"address": "Kottivakkam"
+		},
+		{
+			"id": 4,
+			"name": "Karthi",
+			"age": 25,
+			"mobile": 9876543210,
+			"email": "karthi@gmail.com",
+			"address": "Icehouse"
+		}
+	]
+
+}

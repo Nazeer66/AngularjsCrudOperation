@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="myAngular">
+<head>
+    <title>Angualrjs</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <script src="../bower_components/angular/angular.js" type="text/javascript"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/controller/myCtrl.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div ng-controller="myctrl">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="form-group">
+            <h2>CRUD Operation</h2>
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" ng-model="name" id="usr">
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" class="form-control" ng-model="age" id="usr">
+          </div>
+          <div class="form-group">
+              <label for="mobile">Mobile:</label>
+              <input type="text" class="form-control" ng-model="mobile" id="usr">
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" ng-model="email" id="usr">
+          </div>
+          <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" class="form-control" ng-model="address" id="usr">
+          </div>
+          <div class="form-group">
+              <button type="button" class="btn btn-primary" ng-click="addData()" ng-hide="hideEdit">submit</button>
+              <button type="button" class="btn btn-primary" ng-click="updateData()" ng-hide="hideUpdate">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Table Database</h2>
+            <table class="table myTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="user in users">
+                    <td> <input type="text" ng-model="user.name" ng-show="user.editable">
+                      <span ng-hide="user.editable">{{user.name}}</span></td>
+                    <td><input type="text" ng-model="user.age" ng-show="user.editable">
+                      <span ng-hide="user.editable">{{user.age}}</span></td>
+                    <td><input type="text" ng-model="user.mobile" ng-show="user.editable">
+                      <span ng-hide="user.editable">{{user.mobile}}</span></td>
+                    <td><input type="text" ng-model="user.email" ng-show="user.editable">
+                      <span ng-hide="user.editable">{{user.email}}</span></td>
+                    <td><input type="text" ng-model="user.address" ng-show="user.editable">
+                      <span ng-hide="user.editable">{{user.address}}</span></td>
+                    <td><button type="button" class="btn btn-primary"><span ng-click="editMe($index)" ng-hide="user.editable">Edit</span>
+                       <span ng-click="save($index)" ng-show="user.editable">Save</span></button>&nbsp;&nbsp;
+                      <button type="button" class="btn btn-danger" ng-click="deleteTable($index)">Delete</button></td>
+                  
+                    </tr>
+              </table>
+        </div>
+      </div>
+    </div>
+
+
+  
+</div>
+
+</body>
+</html>
